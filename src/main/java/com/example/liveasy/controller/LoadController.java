@@ -1,6 +1,6 @@
 package com.example.liveasy.controller;
 
-import com.example.liveasy.dto.LoadDetailsReq;
+import com.example.liveasy.dto.LoadDetailsDto;
 import com.example.liveasy.service.LoadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,8 +16,8 @@ public class LoadController {
     LoadService loadService;
 
     @PostMapping("/load")
-    public String addLoadDetails(@RequestBody LoadDetailsReq loadDetailsReq) {
-        return  loadService.addLoad(loadDetailsReq);
+    public String addLoadDetails(@RequestBody LoadDetailsDto loadDetailsDto) {
+        return  loadService.addLoad(loadDetailsDto);
     }
 
 

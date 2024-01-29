@@ -1,6 +1,6 @@
 package com.example.liveasy.service.impl;
 
-import com.example.liveasy.dto.LoadDetailsReq;
+import com.example.liveasy.dto.LoadDetailsDto;
 import com.example.liveasy.entity.LoadEntity;
 import com.example.liveasy.repository.LoadRepository;
 import com.example.liveasy.service.LoadService;
@@ -13,11 +13,11 @@ public class LoadServiceImpl implements LoadService {
     @Autowired
     private LoadRepository loadRepository;
     @Override
-    public String addLoad(LoadDetailsReq loadDetailsReq) {
+    public String addLoad(LoadDetailsDto loadDetailsDto) {
 
-        LoadEntity loadEntity = new LoadEntity(null,loadDetailsReq.getLoadingPoint(),loadDetailsReq.getUnloadingPoint(),
-                loadDetailsReq.getProductType(),loadDetailsReq.getTruckType(),loadDetailsReq.getNoOfTrucks(),
-                loadDetailsReq.getWeight(),loadDetailsReq.getComment(),loadDetailsReq.getShipperId(),loadDetailsReq.getDate());
+        LoadEntity loadEntity = new LoadEntity(null, loadDetailsDto.getLoadingPoint(), loadDetailsDto.getUnloadingPoint(),
+                loadDetailsDto.getProductType(), loadDetailsDto.getTruckType(), loadDetailsDto.getNoOfTrucks(),
+                loadDetailsDto.getWeight(), loadDetailsDto.getComment(), loadDetailsDto.getShipperId(), loadDetailsDto.getDate());
         loadRepository.save(loadEntity);
         return "Load details added successfully";
     }

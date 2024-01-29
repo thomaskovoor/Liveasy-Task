@@ -1,10 +1,10 @@
 package com.example.liveasy.service;
 
-import com.example.liveasy.dto.LoadDetailsReq;
+import com.example.liveasy.dto.LoadDetailsDto;
 
 public interface LoadService {
 
-    String addLoad(LoadDetailsReq loadDetailsReq);
+    String addLoad(LoadDetailsDto loadDetailsDto);
 
 
 

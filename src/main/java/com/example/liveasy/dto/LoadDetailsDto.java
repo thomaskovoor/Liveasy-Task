@@ -3,7 +3,13 @@ package com.example.liveasy.dto;
 import java.util.Date;
 import java.util.UUID;
 
-public class LoadDetailsReq {
+public class LoadDetailsDto {
+
+    private Long loadId;
+
+    public Long getLoadId() {
+        return loadId;
+    }
 
     private String loadingPoint;
     private String unloadingPoint;
@@ -51,15 +57,4 @@ public class LoadDetailsReq {
         return date;
     }
 
-    public LoadDetailsReq(String loadingPoint, String unloadingPoint, String productType, String truckType, String noOfTrucks, String weight, String comment, UUID shipperId, Date date) {
-        this.loadingPoint = loadingPoint;
-        this.unloadingPoint = unloadingPoint;
-        this.productType = productType;
-        this.truckType = truckType;
-        this.noOfTrucks = noOfTrucks;
-        this.weight = weight;
-        this.comment = comment;
-        this.shipperId = shipperId;
-        this.date = date;
-    }
 }
