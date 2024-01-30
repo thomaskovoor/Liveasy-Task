@@ -2,11 +2,13 @@ package com.example.liveasy.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.UUID;
 
 @Getter
+@Setter
 @Table(name = "load")
 @Entity
 public class LoadEntity {
