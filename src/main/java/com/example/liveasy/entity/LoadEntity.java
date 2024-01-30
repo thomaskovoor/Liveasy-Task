@@ -1,9 +1,12 @@
 package com.example.liveasy.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+
 import java.util.Date;
 import java.util.UUID;
 
+@Getter
 @Table(name = "load")
 @Entity
 public class LoadEntity {
@@ -28,46 +31,6 @@ public class LoadEntity {
     @Column(name = "shipper_id")
     private UUID shipperId;
 
-    public Long getLoadId() {
-        return loadId;
-    }
-
-    public String getLoadingPoint() {
-        return loadingPoint;
-    }
-
-    public String getUnloadingPoint() {
-        return unloadingPoint;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
-
-    public String getTruckType() {
-        return truckType;
-    }
-
-    public String getNoOfTrucks() {
-        return noOfTrucks;
-    }
-
-    public String getWeight() {
-        return weight;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public UUID getShipperId() {
-        return shipperId;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
     public LoadEntity(Long loadId, String loadingPoint, String unloadingPoint,
                       String productType, String truckType, String noOfTrucks,
                       String weight, String comment, UUID shipperId, Date date) {
@@ -85,5 +48,8 @@ public class LoadEntity {
 
     @Column(name = "date")
     private Date date;
+
+    public LoadEntity() {
+    }
 
 }
