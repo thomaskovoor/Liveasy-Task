@@ -10,6 +10,7 @@ public interface LoadService {
     LoadListResponse getAllLoadsByShipperId(UUID shipperId);
     LoadListResponse getLoadsByLoadId(Long loadId);
     String deleteLoadByLoadId(Long loadId);
+    String updateLoadByLoadId(Long loadId, LoadDetailsDto loadDetailsDto);
 
 
 

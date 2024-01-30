@@ -34,6 +34,14 @@ public class LoadController {
         return loadService.deleteLoadByLoadId(loadId);
     }
 
+    @PutMapping("/load/{loadId}")
+    public String updateLoadByLoadId(@PathVariable("loadId") Long loadId,
+                                     @RequestBody LoadDetailsDto loadDetailsDto) {
+        return loadService.updateLoadByLoadId(loadId, loadDetailsDto);
+
+    }
+
+
 
 
 }

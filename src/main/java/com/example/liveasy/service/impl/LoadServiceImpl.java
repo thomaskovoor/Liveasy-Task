@@ -97,4 +97,27 @@ public class LoadServiceImpl implements LoadService {
         }
     }
 
+    @Override
+    public String updateLoadByLoadId(Long loadId, LoadDetailsDto loadDetailsDto) {
+        LoadEntity load = loadRepository.findById(loadId).orElse(null);
+        if(load == null){
+            return "No load found for the given loadId\n" +
+                    "Load not updated";
+        }
+
+        load.setLoadingPoint(loadDetailsDto.getLoadingPoint());
+        load.setUnloadingPoint(loadDetailsDto.getUnloadingPoint());
+        load.setProductType(loadDetailsDto.getProductType());
+        load.setTruckType(loadDetailsDto.getTruckType());
+        load.setNoOfTrucks(loadDetailsDto.getNoOfTrucks());
+        load.setWeight(loadDetailsDto.getWeight());
+        load.setComment(loadDetailsDto.getComment());
+        load.setShipperId(loadDetailsDto.getShipperId());
+        load.setDate(loadDetailsDto.getDate());
+
+        loadRepository.save(load);
+
+        return "Load updated successfully";
+    }
+
 }
