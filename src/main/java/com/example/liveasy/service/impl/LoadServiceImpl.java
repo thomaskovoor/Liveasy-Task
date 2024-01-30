@@ -59,5 +59,32 @@ public class LoadServiceImpl implements LoadService {
 
     }
 
+    @Override
+    public LoadListResponse getLoadsByLoadId(Long loadId) {
+        LoadEntity load = loadRepository.findById(loadId).orElse(null);
+        if (load == null) {
+            return LoadListResponse.builder()
+                    .message("No load found for the given loadId")
+                    .loadDetailsDtoList(null)
+                    .build();
+        }
+
+        return LoadListResponse.builder()
+                .message("Load fetched successfully")
+                .loadDetailsDtoList(List.of(LoadDetailsDto.builder()
+                        .loadId(load.getLoadId())
+                        .loadingPoint(load.getLoadingPoint())
+                        .unloadingPoint(load.getUnloadingPoint())
+                        .productType(load.getProductType())
+                        .truckType(load.getTruckType())
+                        .noOfTrucks(load.getNoOfTrucks())
+                        .weight(load.getWeight())
+                        .comment(load.getComment())
+                        .shipperId(load.getShipperId())
+                        .date(load.getDate())
+                        .build()))
+                .build();
+    }
+
 
 }

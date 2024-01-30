@@ -24,6 +24,11 @@ public class LoadController {
         return loadService.getAllLoadsByShipperId(shipperId);
     }
 
+    @GetMapping("/load/{loadId}")
+    public LoadListResponse getLoadsByLoadId(@PathVariable("loadId") Long loadId) {
+        return loadService.getLoadsByLoadId(loadId);
+    }
+
 
 
 }
