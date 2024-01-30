@@ -29,6 +29,11 @@ public class LoadController {
         return loadService.getLoadsByLoadId(loadId);
     }
 
+    @DeleteMapping("/load/{loadId}")
+    public String deleteLoadByLoadId(@PathVariable("loadId") Long loadId) {
+        return loadService.deleteLoadByLoadId(loadId);
+    }
+
 
 
 }

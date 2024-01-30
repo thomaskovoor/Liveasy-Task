@@ -9,6 +9,8 @@ public interface LoadService {
     String addLoad(LoadDetailsDto loadDetailsDto);
     LoadListResponse getAllLoadsByShipperId(UUID shipperId);
     LoadListResponse getLoadsByLoadId(Long loadId);
+    String deleteLoadByLoadId(Long loadId);
+
 
 
 

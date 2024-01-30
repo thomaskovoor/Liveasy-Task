@@ -86,5 +86,15 @@ public class LoadServiceImpl implements LoadService {
                 .build();
     }
 
+    @Override
+    public String deleteLoadByLoadId(Long loadId) {
+        if (loadRepository.findById(loadId).orElse(null) == null) {
+            return "No load found for the given loadId";
+        }
+        else {
+            loadRepository.deleteById(loadId);
+            return "Load deleted successfully";
+        }
+    }
 
 }
